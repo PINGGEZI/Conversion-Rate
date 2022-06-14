@@ -33,5 +33,17 @@ The dataset contains 316,200 observations. Each rows represents a unique user wi
 
 ## Exploratory Data Analysis
 
+* The data set contains 316200 observations with no missing values.
+
+* The conversion rate at ~3% is industry standard, which makes sense. 
+
+
+* The user base is quite young with average age of 30.
+
+
+* More than half of the users clcking the site have an account alreday. 
+
+* Maximum age of 123 looks suspicious!! Let's look closer.
+
 
 
