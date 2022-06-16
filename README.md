@@ -86,3 +86,10 @@ The Model used to predict the conversion is **Random Forest Classifer**. Remind 
 3.   Typically, it performs very well on classification problems and prevent from overfitting with appropriate numbers of trees.
 
 In addition, the metric I used to evaluated the model is **F1 score** since it is sensitive to imbalanced data and trades off the precision and recall. Using F1 score prevents the model bias towards the majority class to a large extent.
+
+### Modeling Training &  Evaluation
+Here the data set is splited into:
+**Training Set**: 52.5% of the dataset
+**Validation Set**: 22.5% of the dataset
+**Test Set**: 25% of the dataset 
+
