@@ -89,7 +89,18 @@ In addition, the metric I used to evaluated the model is **F1 score** since it i
 
 ### Modeling Training &  Evaluation
 Here the data set is splited into:
-**Training Set**: 52.5% of the dataset
-**Validation Set**: 22.5% of the dataset
-**Test Set**: 25% of the dataset 
 
+>**Training Set**: 52.5% of the data is used to train the model. \
+>**Validation Set**: 22.5% of the data is used to tune the parameters. \
+>**Test Set**: 25% of the data evaluate performance of the model on unseen data. 
+
+
+The F1 socre on the training set is:  0.764 \
+The F1 socre on the validaition set is:  0.761 \
+The F1 socre on the test set is:  0.753 \
+
+<img width="1042" alt="image" src="https://user-images.githubusercontent.com/47039591/174001878-93b5edc5-5c28-4b06-928b-27aca69a23ff.png">
+
+The model performed stably on the unseen data. The F1 score on the test set is still 0.753, is really close to the results of the training and validation set.
+
+The Precision-Recall curve describes the trade-off between precision and recall across different thresholds, so the larger area under the curve (up to 1) the better performance of the model. The curve confirms our model performs very good too.
