@@ -34,7 +34,7 @@ The dataset contains 316,200 observations. Each rows represents a unique user wi
 ## Exploratory Data Analysis
 
 ### Data Descriptions
-Before deep dive into the data, let's take a look at the descriptive statistics of the data and get a basic understanding of it. 
+ Let's take a look at the descriptive statistics of the data and get a basic understanding of it. 
 
 <br>
 
@@ -51,7 +51,7 @@ A Few Quick Observations:
 
 * More than half of the users clcking the site have an account alreday. 
 
-* Maximum age of 123 looks suspicious!! After examination, I found that two users reported themselves as older than 110-year-old. These records are not so reliable, so just remove these rows.
+* Maximum age of 123 looks suspicious!! After examination, I found two users reported themselves as older than 110-year-old. These records are not so reliable, so just remove these rows.
 
 ### Key Findings
 **(1)**
@@ -77,3 +77,12 @@ A Few Quick Observations:
 <img width="580" alt="image" src="https://user-images.githubusercontent.com/47039591/173702548-70f54aea-99d7-4e49-8d87-95a684d3151b.png">
 As we can see, only ~3.2% users converted. The data is extremely imbalanced. 
 
+## Modeling 
+
+The Model used to predict the conversion is **Random Forest Classifer**. Remind that our target variable 'converted' is a binary, so the problem is binary classification. Here are the reasons why I picked Random Forest Classifer for our case: 
+
+1.   Random forest is good at dealing with both discrete and continuous variables.
+2.   It can identify the importance of the variables to the conversion rate.
+3.   Typically, it performs very well on classification problems and prevent from overfitting with appropriate numbers of trees.
+
+In addition, the metric I used to evaluated the model is **F1 score** since it is sensitive to imbalanced data and trades off the precision and recall. Using F1 score prevents the model bias towards the majority class to a large extent.
