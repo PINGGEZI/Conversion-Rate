@@ -97,10 +97,46 @@ Here the data set is splited into:
 
 The F1 socre on the training set is:  0.764 \
 The F1 socre on the validaition set is:  0.761 \
-The F1 socre on the test set is:  0.753 \
+The F1 socre on the test set is:  0.753 
 
 <img width="1042" alt="image" src="https://user-images.githubusercontent.com/47039591/174001878-93b5edc5-5c28-4b06-928b-27aca69a23ff.png">
 
 The model performed stably on the unseen data. The F1 score on the test set is still 0.753, is really close to the results of the training and validation set.
 
 The Precision-Recall curve describes the trade-off between precision and recall across different thresholds, so the larger area under the curve (up to 1) the better performance of the model. The curve confirms our model performs very good too.
+
+### Feature Importance
+
+<img width="742" alt="image" src="https://user-images.githubusercontent.com/47039591/174201298-89a37d60-e9ac-4193-af38-7293a4cb242f.png">
+
+* The total number of pages visited is most important according to our model.
+Unfortunately, this feature is the least actionable. Because when users are ready to buy something, they typically visit more pages, such as reading the descriptions of the product, comparing prices between products. Also, purchasing a product requires users to access more pages to finish payment. \
+
+* Source related feature seems not so important to the conversion.
+
+### Partical Dependency Plot
+
+<img width="949" alt="image" src="https://user-images.githubusercontent.com/47039591/174201500-70383fe3-7f72-4012-92fa-35d4b1d68178.png">
+
+<br>
+
+* Users with account came back to site are more likely to convert. 
+* Users under 30 years old did very well. 
+* UK,US and Gernmany have similar marginal impact on the conversion, with the Gernmany being the best. They all have high values, compared with China. In other words, China has very bas conversion. 
+* Whichever source the users use did not matter much on the conversion.
+
+Now, I would like to build a simple descision tree with max depth of 3 and check out which features would be most determinant when limiting the number of features.
+
+<img width="1190" alt="image" src="https://user-images.githubusercontent.com/47039591/174202497-59f82c83-bb33-438b-ba08-f37988b70d32.png">
+The simple decision tree has an agreement with the random forest on the most important segments. 
+
+## Conclusion
+
+* Users with old accounts do much better in terms of conversion, so targeted emails with offers or promotions to bring them back to the site could be a good strategy to try. 
+
+* German perfroms the best among all countries. However, the total number of germany users coming to the site is the least despite a much larger population than UK. Attracting more German or improve the product awareness in German can potentially generate more values. 
+
+* Users oder than 30 years old perfrom poorly. Does this caused by the flawless of user interface or comlexity of operations? A good actionable metric here is the conversion rate for users older than 30 years old. Is that possible to build a team foucusing on increasing this metirc? 
+
+* Even though lots of Chinese people visited the site, the conversion rate is extremely low. There could be something wrong with the Chinese Version of the site. Does it asscoiated with poor translation, poor culture fit, or payment issues? Investigating these problems and fixing them could bring huge value to the company based on the tremendous user base in China.
+
